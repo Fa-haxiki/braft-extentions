@@ -14,7 +14,8 @@ export default class extends React.Component{
     })
   }
 
-  confirmInsert = () => {
+  confirmInsert = (event) => {
+    event.preventDefault()
     this.props.onConfirm(this.state)
   }
 

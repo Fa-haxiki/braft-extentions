@@ -30,27 +30,27 @@ BraftEditor.use(mentionExtension)
 /** test mention plugin mock data */
 const mentions = [
   {
-      name: 'Matthew Russell',
+      name: 'Matthew',
       link: 'https://twitter.com/mrussell247',
       avatar: 'https://pbs.twimg.com/profile_images/517863945/mattsailing_400x400.jpg'
   },
   {
-      name: 'Julian Krispel-Samsel',
+      name: 'Julian',
       link: 'https://twitter.com/juliandoesstuff',
       avatar: 'https://avatars2.githubusercontent.com/u/1188186?v=3&s=400'
   },
   {
-      name: 'Jyoti Puri',
+      name: 'Jyoti',
       link: 'https://twitter.com/jyopur',
       avatar: 'https://avatars0.githubusercontent.com/u/2182307?v=3&s=400'
   },
   {
-      name: 'Max Stoiber',
+      name: 'Max',
       link: 'https://twitter.com/mxstbr',
       avatar: 'https://pbs.twimg.com/profile_images/763033229993574400/6frGyDyA_400x400.jpg'
   },
   {
-      name: 'Nik Graf',
+      name: 'Nik',
       link: 'https://twitter.com/nikgraf',
       avatar: 'https://avatars0.githubusercontent.com/u/223045?v=3&s=400'
   },
@@ -98,18 +98,20 @@ class Demo extends React.Component {
     return (
       <div>
         <div className="demo-editor" id="demo">
-          <BraftEditor
-            extendControls={[{
-              key: 'log-html',
-              type: 'button',
-              text: 'Log HTML',
-              onClick: this.logHTML
-            }]}
-            placeholder="xxx"
-            onChange={this.handleChange}
-            value={editorState}
-            contentStyle={{ height: 700 }}
-          />
+          <form>
+            <BraftEditor
+              extendControls={[{
+                key: 'log-html',
+                type: 'button',
+                text: 'Log HTML',
+                onClick: this.logHTML
+              }]}
+              placeholder="xxx"
+              onChange={this.handleChange}
+              value={editorState}
+              contentStyle={{ height: 700 }}
+            />
+          </form>
             <MentionSuggestions
                 suggestions={this.state.suggestions}
                 onSearchChange={this.onSearchChange}
